@@ -16,8 +16,14 @@ RUN apt-get install -y xvfb \
                        python-pyqt5.qtwebengine \
                        python-pyqt5.qtopengl
 
-# Start Xvfb
-RUN /sbin/start-stop-daemon --start --quiet --pidfile /tmp/custom_xvfb_99.pid \
-                            --make-pidfile --background --exec /usr/bin/Xvfb \
-                            -- :99 -screen 0 1920x1200x24 -ac \
-                            +extension GLX +render -noreset
+# Install git
+RUN apt-get install -y git
+
+# Copy over xvfb script
+COPY start-xvfb /usr/bin
+
+# Install more recent version of pip
+RUN pip install pip --upgrade --user
+
+# Add user Python path to PATH
+ENV PATH="/root/.local/bin:${PATH}"
