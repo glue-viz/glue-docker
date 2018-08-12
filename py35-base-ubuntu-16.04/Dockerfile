@@ -20,3 +20,6 @@ RUN pip3 install pip --upgrade --user
 
 # Add user Python path to PATH
 ENV PATH="/root/.local/bin:${PATH}"
+
+# Install additional libraries required for QWebEngine
+RUN apt-get install -y libnss3 libxslt1.1
