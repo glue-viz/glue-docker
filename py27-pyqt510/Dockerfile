@@ -6,7 +6,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 ENV DISPLAY=:99.0
 
 # Install Python and PyQt
-RUN apt-get update
+RUN apt-get update --fix-missing
 RUN apt-get install -y xvfb \
                        python=2.7.15~rc1-1 \
                        python-dev \

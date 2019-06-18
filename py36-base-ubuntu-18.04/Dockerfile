@@ -6,7 +6,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 ENV DISPLAY=:99.0
 
 # Install Python, git, and the dependencies for Qt
-RUN apt-get update
+RUN apt-get update --fix-missing
 RUN apt-get install -y xvfb git sudo \
                        python3 python3-dev python3-pip python3-wheel python3-tk \
                        libgtk2.0-dev libgl1-mesa-glx libegl1-mesa libxrandr2 \
