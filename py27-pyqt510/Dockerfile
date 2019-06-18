@@ -14,7 +14,10 @@ RUN apt-get install -y xvfb \
                        python-pyqt5=5.10.1+dfsg-1ubuntu2 \
                        python-pyqt5.qtsvg \
                        python-pyqt5.qtwebengine \
-                       python-pyqt5.qtopengl
+                       python-pyqt5.qtopengl \
+                       python-tk \
+                       graphviz \
+                       libxkbcommon-x11-0
 
 # Install git
 RUN apt-get install -y git
